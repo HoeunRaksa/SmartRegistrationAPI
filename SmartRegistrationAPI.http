@@ -1,0 +1,6 @@
+@SmartRegistrationAPI_HostAddress = http://localhost:5127
+
+GET {{SmartRegistrationAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
