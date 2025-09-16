@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using SmartRegistrationAPI.Models;
 using SmartRegistrationAPI.Services;
-
+using SmartRegistrationAPI;
+using SmartRegistrationAPI.DTOs;
 namespace SmartRegistrationAPI.Controllers
 {
     [ApiController]
@@ -15,20 +16,6 @@ namespace SmartRegistrationAPI.Controllers
         {
             _userService = userService;
             _tokenService = tokenService;
-        }
-
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
-        {
-            var user = await _userService.AuthenticateAsync(request.Username, request.Password);
-
-            if (user != null)
-            {
-                var token = _tokenService.GenerateToken(user.Username, user.Role);
-                return Ok(new { Token = token });
-            }
-
-            return Unauthorized();
         }
     }
 }

@@ -1,5 +1,5 @@
-using System.ComponentModel.DataAnnotations; 
-namespace SmartRegistration.DTOs;
+using System.ComponentModel.DataAnnotations;
+namespace SmartRegistrationAPI.DTOs;
 public class DepartmentCreateDto {
 	[Required]
 	[MaxLength(100)]

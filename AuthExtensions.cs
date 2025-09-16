@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-
 namespace SmartRegistrationAPI;
-
 public static class AuthExtensions
 {
     public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, string secretKey)
